@@ -12,6 +12,5 @@ api.add_resource(Tiny, '/api/v1/url/<string:url>')
 api.add_resource(TinyList, '/api/v1/url/')
 
 
-
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8088)
