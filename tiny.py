@@ -2,8 +2,9 @@ from flask_restful import Resource, abort, reqparse
 from flask import redirect
 
 from generate_id import ID
+from lru import LRU
 
-_datastore = {"123": "https://news.ycombinator.com"}
+_datastore = LRU(2, {"123": "https://news.ycombinator.com"})
 
 class TinyList(Resource):
     parser = reqparse.RequestParser()
